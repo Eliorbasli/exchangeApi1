@@ -6,7 +6,9 @@ def get_exchange(symbol = "EUR", number = 10 , headers={}):
   symbol = "EUR"
   url = "https://api.apilayer.com/exchangerates_data/latest?symbols=&base${symbol}"
   payload = {}
-
+  # headers= {
+  #   "apikey": "wgk75GOY6ZqwzGGVzrLH1NxyrHr3kbl3"
+  # }
   response = requests.request("GET", url, headers=headers, data = payload)
   status_code = response.status_code
   result = json.loads(response.text)
@@ -21,7 +23,7 @@ def get_exchange(symbol = "EUR", number = 10 , headers={}):
 
 def main():
   headers= {
-    "apikey": "YOUR_API"
+    "apikey": "wgk75GOY6ZqwzGGVzrLH1NxyrHr3kbl3"
   }
 
   print("-----check1------")
